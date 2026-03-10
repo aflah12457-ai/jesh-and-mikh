@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transparent Navbar Scroll</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+
+/* body spacing */
+body{
+margin:0;
+font-family:Arial;
+}
+
+/* NAVBAR DEFAULT (TRANSPARENT) */
+
+.custom-navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:transparent;
+transition:all 0.4s ease;
+z-index:999;
+padding:20px 0;
+}
+
+/* NAVBAR AFTER SCROLL */
+
+.navbar-scrolled{
+background:#000;
+box-shadow:0 4px 20px rgba(0,0,0,0.3);
+padding:12px 0;
+}
+
+/* LINKS */
+
+.custom-navbar .nav-link{
+color:#fff;
+margin-left:20px;
+font-weight:500;
+}
+
+.custom-navbar .nav-link:hover{
+color:#c89b6f;
+}
+
+/* LOGO */
+
+.navbar-brand img{
+height:45px;
+}
+
+/* DEMO SECTION */
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1588776814546-daab30f310ce') center/cover no-repeat;
+}
+
+.content{
+height:1200px;
+padding:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand" href="#">
+<img src="assets/img/logo.png">
+</a>
+
+<button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+
+<ul class="navbar-nav">
+
+<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Dental</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Doctors</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Insurance</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Dental Tourism</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<div class="hero"></div>
+
+<!-- CONTENT -->
+
+<div class="content">
+<h2>Scroll Down</h2>
+<p>Example content here...</p>
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
