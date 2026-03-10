@@ -1673,6 +1673,22 @@ footer {
     justify-content: center;
 }
 
+@media(max-width: 768px) {
+    .hero-content-service h3 { 
+        font-size: 50px;
+    }
+    .service-list-points li{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 500px) {
+    .hero-content-service h3 { 
+        font-size: 35px;
+    }
+
+}
+
 
 
 /* -----------------------------
@@ -1723,6 +1739,15 @@ footer {
 
 .service-list-contents p {
     font-size: 14px;
+}
+
+@media(max-width: 991px) {
+    .service-list-section {
+        padding: 40px 10px;
+    }
+    .service-list-card{
+        gap: 0px;
+    }
 }
 
 /* -----------------------------
