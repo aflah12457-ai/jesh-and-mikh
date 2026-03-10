@@ -89,8 +89,6 @@ img {
     .section-title {
         font-size: 45px;
     }
-
-
 }
 
 @media(max-width:1150px) {
@@ -194,14 +192,14 @@ color:#c89b6f;
     width: 100%;
 }
 
-@media(max-width: 992px) {
+@media(max-width: 991px) {
     .header-nav {
         display: initial;
     }
 
-    .header-nav .navbar-toggler {
-        position: absolute;
-        right: 20px;
+     .navbar-toggler {
+        /* position: absolute; */
+        /* right: 25px; */
         filter: invert(1) brightness(1);
     }
 
@@ -1382,6 +1380,18 @@ ADD SECTION
 
 /* RESPONSIVE */
 
+@media(max-width:1440px) {
+    .faq-title h2 {
+        font-size: 45px;
+    }
+}
+
+@media(max-width:1150px) {
+    .faq-title h2 {
+        font-size: 38px;
+    }
+}
+
 @media(max-width:991px) {
 
     .faq-section {
@@ -1400,7 +1410,7 @@ ADD SECTION
     }
 
     .faq-title h2 {
-        font-size: 34px;
+        font-size: 33px;
     }
 }
 
@@ -1421,7 +1431,7 @@ ADD SECTION
 
 @media(max-width:500px) {
     .faq-title h2 {
-        font-size: 20px;
+        font-size: 30px;
     }
 }
 
@@ -1578,7 +1588,9 @@ footer {
         gap: 20px;
     }
 
-    .footer-nav ul {}
+    .footer-nav ul li{
+        margin-bottom: 8px;
+    }
 
     footer {
         padding-top: 40px;
@@ -1747,6 +1759,10 @@ footer {
     }
     .service-list-card{
         gap: 0px;
+    }
+
+    .service-list-contents h4{
+        font-size: 20px;
     }
 }
 
