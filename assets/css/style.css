@@ -78,6 +78,10 @@ img {
     overflow: hidden;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 @media (max-width:768px) {
     [data-aos] {
         transform: none !important;
@@ -524,6 +528,7 @@ WHY CHOOSE
     margin: 0;
     width: 50%;
     margin-top: 10px;
+    color: #000;
 }
 
 /* Hover */
