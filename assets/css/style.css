@@ -1758,6 +1758,10 @@ footer {
     font-size: 14px;
 }
 
+.service-inner-section-title{
+    font-size: 35px !important;
+}
+
 @media(max-width: 991px) {
     .service-list-section {
         padding: 40px 10px;
@@ -1768,6 +1772,15 @@ footer {
 
     .service-list-contents h4{
         font-size: 20px;
+    }
+    .service-inner-section-title{
+    font-size: 30px !important;
+}
+}
+
+@media(max-width: 768px) {
+    .service-inner-section-title{
+        font-size: 30px !important;
     }
 }
 
