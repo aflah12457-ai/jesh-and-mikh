@@ -35,6 +35,10 @@ body {
     color: #555;
 }
 
+.font-normal{
+    font-family: "Geist", sans-serif;
+}
+
 
 .btn-book {
     font-size: 13px;
@@ -62,9 +66,27 @@ body {
         linear-gradient(#fff, #fff) padding-box,
         linear-gradient(90deg, #6a00ff, #ff6ec4) border-box;
     color: #000;
-    box-shadow: 
-         0 0 
-          rgba(168, 85, 247, 0.3),
+    box-shadow:
+        0 0 rgba(168, 85, 247, 0.3),
+        0 0 0 rgba(240, 171, 252, 0.3);
+}
+
+.btn-fill-bg{
+    background:
+        linear-gradient(316deg, #855f3a 0%, #ffcaa6 100%) padding-box,
+        linear-gradient(90deg, #855f3a, #855f3a) border-box;
+    background: linear-gradient(316deg, #855f3a 0%, #ffcaa6 100%);
+    color: #fff;
+}
+
+.btn-fill-bg:hover {
+    border: 2px solid transparent;
+    background:
+        linear-gradient(316deg, #855f3a 0%, #ffcaa6 100%) padding-box,
+        linear-gradient(90deg, #6a00ff, #ff6ec4) border-box;
+    color: #000;
+    box-shadow:
+        0 0 rgba(168, 85, 247, 0.3),
         0 0 0 rgba(240, 171, 252, 0.3);
 }
 
@@ -78,7 +100,7 @@ img {
     overflow: hidden;
 }
 
-a{
+a {
     text-decoration: none !important;
 }
 
@@ -152,35 +174,35 @@ NAVBAR
 
 /* NAVBAR DEFAULT (TRANSPARENT) */
 
-.custom-navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:transparent;
-transition:all 0.4s ease;
-z-index:999;
-padding:20px 0;
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    transition: all 0.4s ease;
+    z-index: 999;
+    padding: 20px 0;
 }
 
 /* NAVBAR AFTER SCROLL */
 
-.navbar-scrolled{
-background:#000;
-box-shadow:0 4px 20px rgba(0,0,0,0.3);
-padding:12px 0;
+.navbar-scrolled {
+    background: #000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 12px 0;
 }
 
 /* LINKS */
 
-.custom-navbar .nav-link{
-color:#fff;
-margin-left:20px;
-font-weight:500;
+.custom-navbar .nav-link {
+    color: #fff;
+    margin-left: 20px;
+    font-weight: 500;
 }
 
-.custom-navbar .nav-link:hover{
-color:#c89b6f;
+.custom-navbar .nav-link:hover {
+    color: #c89b6f;
 }
 
 
@@ -196,12 +218,36 @@ color:#c89b6f;
     width: 100%;
 }
 
+.custom-navbar.navbar-black .nav-link{
+    color: black  !important;
+}
+
+.navbar-scrolled.custom-navbar.navbar-black .nav-link{
+    color: white !important;
+}
+
+.white-logo{
+    display: none;
+}
+
+.black-logo{
+    display: block;
+}
+
+.navbar-scrolled.custom-navbar.navbar-black .black-logo{
+    display: none;
+}
+
+.navbar-scrolled.custom-navbar.navbar-black .white-logo{
+    display: block;
+}
+
 @media(max-width: 991px) {
     .header-nav {
         display: initial;
     }
 
-     .navbar-toggler {
+    .navbar-toggler {
         /* position: absolute; */
         /* right: 25px; */
         filter: invert(1) brightness(1);
@@ -211,8 +257,19 @@ color:#c89b6f;
         background: #000;
         padding: 10px;
     }
-    .custom-navbar .nav-link{
+
+    .custom-navbar .nav-link {
         margin: 0px;
+    }
+    .custom-navbar.navbar-black .nav-link{
+    color: rgb(255, 255, 255)  !important;
+    }
+
+    .custom-navbar.navbar-black .navbar-toggler{
+        filter: none;
+    }
+    .navbar-scrolled.custom-navbar.navbar-black .navbar-toggler{
+        filter: invert(1) brightness(1);
     }
 }
 
@@ -361,12 +418,10 @@ CONSULTATION SECTION
 ----------------------------- */
 
 .consultation-img {
-    position: relative;
     overflow: hidden;
     border-radius: 20px;
     height: 500px;
 }
-
 
 /* IMAGE */
 
@@ -376,10 +431,14 @@ CONSULTATION SECTION
     border-radius: 20px;
 }
 
+.image-shine-effect{
+    position: relative;
+}
+
 
 /* SHINE EFFECT */
 
-.consultation-img::before {
+.image-shine-effect::before {
     content: "";
     position: absolute;
     top: 0;
@@ -526,7 +585,7 @@ WHY CHOOSE
 .service-card h4 {
     font-size: 18px;
     margin: 0;
-    width: 50%;
+    width: 60%;
     margin-top: 10px;
     color: #000;
 }
@@ -538,13 +597,13 @@ WHY CHOOSE
     transition: .7s;
 }
 
-.service-card:hover img{
+.service-card:hover img {
     width: 130px;
     transition: .7s;
     margin-bottom: 10px;
 }
 
-.service-card:hover h4{
+.service-card:hover h4 {
     color: white;
     transition: .7s;
 }
@@ -563,10 +622,12 @@ WHY CHOOSE
     .services-section {
         padding: 40px 0px;
     }
+
     .service-card {
         height: 200px;
     }
-    .service-card:hover img{
+
+    .service-card:hover img {
         width: 100px;
     }
 
@@ -785,6 +846,7 @@ ADD SECTION
     .add-main-wrapper .section-title {
         font-size: 35px;
     }
+
     .add-content-left {
         width: 100%;
     }
@@ -1563,7 +1625,7 @@ footer {
     font-size: 16px;
     color: #fff;
     ;
-    text-align: left ;
+    text-align: left;
     line-height: 1.6;
 }
 
@@ -1593,7 +1655,7 @@ footer {
         gap: 20px;
     }
 
-    .footer-nav ul li{
+    .footer-nav ul li {
         margin-bottom: 8px;
     }
 
@@ -1691,16 +1753,17 @@ footer {
 }
 
 @media(max-width: 768px) {
-    .hero-content-service h3 { 
+    .hero-content-service h3 {
         font-size: 50px;
     }
-    .service-list-points li{
+
+    .service-list-points li {
         font-size: 15px;
     }
 }
 
 @media(max-width: 500px) {
-    .hero-content-service h3 { 
+    .hero-content-service h3 {
         font-size: 35px;
     }
 
@@ -1758,7 +1821,7 @@ footer {
     font-size: 14px;
 }
 
-.service-inner-section-title{
+.service-inner-section-title {
     font-size: 35px !important;
 }
 
@@ -1766,24 +1829,222 @@ footer {
     .service-list-section {
         padding: 40px 10px;
     }
-    .service-list-card{
+
+    .service-list-card {
         gap: 0px;
     }
 
-    .service-list-contents h4{
+    .service-list-contents h4 {
         font-size: 20px;
     }
-    .service-inner-section-title{
-    font-size: 30px !important;
-}
+
+    .service-inner-section-title {
+        font-size: 30px !important;
+    }
 }
 
 @media(max-width: 768px) {
-    .service-inner-section-title{
+    .service-inner-section-title {
         font-size: 30px !important;
     }
 }
 
 /* -----------------------------
     SERVICE LIST CONTENTS PAGE
+----------------------------- */
+
+
+
+/* -----------------------------
+    About
+----------------------------- */
+
+.about-layout-image-box {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.about-layout-image-box img {
+    object-fit: cover;
+    border-radius: 30px;
+    width: 100%;
+
+}
+
+/* -----------------------------
+    Center banner section
+----------------------------- */
+
+.center-banner-section {
+    background-image: url(../img/center-banner-img.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #00000058;
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 180px 0px;
+}
+
+.center-banner-section .section-subtitle {
+    color: white;
+}
+
+
+@media(max-width: 991px) {
+    .center-banner-section {
+        padding: 50px 0px;
+    }
+}
+/* -----------------------------
+    Center banner section
+----------------------------- */
+
+/* -----------------------------
+    Health Smile
+----------------------------- */
+
+
+.healthy-smile{
+    max-width: 100%;
+}
+
+.healthy-smile .appointment-content{
+    padding-left: 0px;
+}
+
+.card-gray{
+    background: #EBECF0;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    transition: .5s;
+}
+
+.card-gray:hover{
+    transform: translateY(-4px);
+    transition: .5s;
+}
+
+.card-gray h2{
+    font-size: 25px;
+    font-family: 'FONTSPRING DEMO - The Seasons';
+    margin-bottom: 15px;
+}
+
+.card-gray img {
+    width: 120px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card-gray p{
+    color: #5F5F5F;
+    font-size: 17px;
+}
+
+@media(max-width: 991px) {
+    .card-gray{
+        margin-top: 10px;
+    }
+}
+
+/* -----------------------------
+    Health Smile
+----------------------------- */
+
+
+/* -----------------------------
+    About
+----------------------------- */
+
+
+/* -----------------------------
+    Denter Offers
+----------------------------- */
+
+.offer-card{
+    background:#ffffff;
+    padding:30px;
+    border-radius:20px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.offer-card h3{
+    font-weight:700;
+}
+
+.offer-card small{
+    color:#c49a6c;
+    font-weight:500;
+}
+
+.offer-card p{
+    color:#666;
+    font-size:14px;
+}
+
+.offer-list{
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+}
+
+.offer-list li{
+    margin-bottom:10px;
+    color:#555;
+    display:flex;
+    align-items:center;
+}
+
+.offer-list li i{
+    background:linear-gradient(45deg,#8b5e3c,#d4a373);
+    color:#fff;
+    border-radius:50%;
+    padding:8px;
+    margin-right:10px;
+    font-size:12px;
+}
+
+.feature-btn{
+    background:linear-gradient(45deg,#8b5e3c,#d4a373);
+    color:#fff;
+    border:none;
+    padding:12px;
+    border-radius:30px;
+    width:100%;
+    margin-top:50px;
+}
+
+.feature-btn:hover{
+    opacity:0.9;
+    color: #fff;
+}
+
+
+.dentel-offer-gary-box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.dentel-offer-gary-box img{
+    margin: 0;
+}
+
+.dentel-offer-gary-box h6{
+    font-size: 18px;
+    width: 50%;
+}
+
+
+
+/* -----------------------------
+    Denter Offers
 ----------------------------- */
