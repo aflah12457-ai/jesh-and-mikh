@@ -88,6 +88,7 @@ body {
     box-shadow:
         0 0 rgba(168, 85, 247, 0.3),
         0 0 0 rgba(240, 171, 252, 0.3);
+    color: #fff;
 }
 
 img {
@@ -1757,8 +1758,16 @@ footer {
         font-size: 50px;
     }
 
+    .hero-content-service h3 br{
+        display: none;
+    }
+
     .service-list-points li {
         font-size: 15px;
+    }
+
+    .hero-content-service p br{
+        display: none;
     }
 }
 
@@ -2047,4 +2056,162 @@ footer {
 
 /* -----------------------------
     Denter Offers
+----------------------------- */
+
+
+
+/* -----------------------------
+    Contact
+----------------------------- */
+
+
+.contact-banner{
+    display: flex;
+    justify-content: center;
+    background-color: #00000052;
+    background-blend-mode: overlay;
+}
+
+.contact-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: .5s;
+}
+
+.contact-card h6{
+    font-size: 14px;
+    color: #4A4A4A;
+    transition: .5s;
+}
+
+.contact-card h4 a{
+    color: #1e1e1e;
+    transition: .5s;
+}
+
+.contact-card:hover h4 a{
+    color: white;
+    transition: .5s;
+}
+
+.contact-card:hover h6 {
+    color: white;
+    transition: .5s;
+}
+
+
+.contact-card-wrapper{
+    background:#ffffff;
+    padding:25px;
+    /* height:100%; */
+    border: 1px solid #D2D2DF;
+}
+
+.contact-title{
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.contact-desc{
+    font-size:14px;
+    color:#777;
+    margin-bottom:70px;
+}
+
+.form-control, .form-select{
+    border-radius:0px;
+    border:1px solid #D2D2DF;
+    padding:12px;
+    font-size:14px;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #855f3a;
+}
+
+.form-control, .form-select:focus-within{
+    box-shadow: none;
+    outline: none;
+}
+
+
+textarea.form-control{
+    height:120px;
+}
+
+
+.info-box{
+    background:#ffffff;
+    padding:40px;
+    margin-bottom:20px;
+    border: 1px solid #D2D2DF;
+}
+
+.info-box:last-child{
+    margin-bottom: 0px;
+}
+
+.info-box h5{
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.info-box p{
+    font-size:14px;
+    color:#666;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
+
+.info-item{
+    font-size:14px;
+}
+
+.info-item i{
+    margin-right:6px;
+    color:#8b5e3c;
+}
+
+.social-icons i{
+    font-size:18px;
+    margin-right:15px;
+    cursor:pointer;
+    color:#555;
+}
+
+/* .position-sticky-box{
+    position: sticky;
+    top: 100px;
+} */
+
+@media (max-width:991px){
+    .info-box{
+        padding: 20px;
+    }
+    .contact-card-wrapper{
+        padding: 20px;
+    }
+    .contact-desc{
+        margin-bottom: 20px;
+    }
+
+    .contact-card-wrapper .btn-book{
+        margin: auto;
+        display: block;
+    }
+}
+
+
+
+/* -----------------------------
+    Contact
 ----------------------------- */
