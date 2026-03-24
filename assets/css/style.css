@@ -311,6 +311,13 @@ NAVBAR
     color: #d4a373;
 }
 
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show:focus-visible {
+    box-shadow: none;
+    outline: none;
+    border: none;
+}
+
 .custom-navbar.navbar-expand-lg .navbar-nav .dropdown-menu {
     background: #000;
     color: white;
@@ -369,12 +376,22 @@ NAVBAR
 
 
     .navbar-toggler {
-        /* position: absolute; */
-        /* right: 25px; */
         filter: invert(1) brightness(1);
     }
 
-    .custom-navbar .navbar-nav {
+    .navbar-toggler:focus-visible{
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler:focus{
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .custom-navbar .navbar-collapse {
         background: #1e1e1e;
         padding: 10px;
     }
