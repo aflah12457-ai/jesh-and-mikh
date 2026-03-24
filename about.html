@@ -39,14 +39,14 @@
 NAVBAR
 ============================= -->
 
-    <nav class="navbar navbar-expand-lg custom-navbar">
+   <nav class="navbar navbar-expand-lg custom-navbar">
 
         <div class="container">
 
             <a class="navbar-brand" href="index.html">
                 <img src="assets/img/logo.png"></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -54,20 +54,67 @@ NAVBAR
 
                 <ul class="navbar-nav">
 
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="denter-offers.html">Dental</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle-custom" href="#" id="dentalDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            About
+                            <i class="fa fa-angle-right arrow-icon"></i>
+                        </a>
+                        <div class="dropdown-menu custom-dropdown custom-dropdown-small">
+                            <a class="dropdown-item" href="about.html">Why choose us</a>
+                            <a class="dropdown-item" href="#">Gallery</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+
+                        <a class="nav-link dropdown-toggle-custom" href="#" data-bs-toggle="dropdown">
+                            Dental
+                            <i class="fa fa-angle-right arrow-icon"></i>
+                        </a>
+
+                        <div class="dropdown-menu custom-dropdown">
+                            <div class="row">
+                                <div class="col-md-6 p-0">
+                                    <a class="dropdown-item" href="denter-offers.html">Offers</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Tooth Pain</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Dental Fillings</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Pediatric Dentistry</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Invisalign</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Teeth Extraction in Dubai</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Dental Braces</a>
+                                </div>
+                                <div class="col-md-6 p-0">
+                                    <a class="dropdown-item" href="toothpain-service.html">Root Canal Treatment</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Dental Implants</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Cosmetic Dentistry</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Teeth Cleaning &
+                                        Polishing</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Teeth Whitening</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Dental Crowns & Bridges</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">Dental Veneers</a>
+                                    <a class="dropdown-item" href="toothpain-service.html">General Medicine</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="#">Doctors</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Insurance</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Dental Tourism</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
-
                 </ul>
-
+                <div class="nav-btns">
+                    <a href="">
+                        <button type="button" class="nav-btn">Message</button>
+                    </a>
+                    <a href="">
+                        <button type="button" class="nav-btn nav-color-btn">Call Now</button>
+                    </a>
+                </div>
             </div>
 
         </div>
-
     </nav>
 
 
@@ -1375,7 +1422,17 @@ SCRIPTS
         init();
         resetAuto();
     </script>
+ <script>
+        document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+            dropdown.addEventListener('show.bs.dropdown', function () {
+                this.querySelector('.arrow-icon').style.transform = 'rotate(90deg)';
+            });
 
+            dropdown.addEventListener('hide.bs.dropdown', function () {
+                this.querySelector('.arrow-icon').style.transform = 'rotate(0deg)';
+            });
+        });
+    </script>
 
 
 </body>
