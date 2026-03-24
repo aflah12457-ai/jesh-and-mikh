@@ -192,6 +192,62 @@ a {
 
 
 
+/* -----------------------------
+Loader
+----------------------------- */
+
+
+.loader-wrapper {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Initial zoom animation */
+.loader-img {
+    width: 200px;
+    animation: zoomLoop 2s ease-in-out infinite;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Loop animation */
+@keyframes zoomLoop {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
+
+/* EXIT STATE */
+.loader-wrapper.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Logo exit effect */
+.loader-wrapper.hide .loader-img {
+    animation: none; /* stop looping */
+    transform: scale(1.6); /* zoom out big */
+    opacity: 0;
+}
+
+/* -----------------------------
+Loader
+----------------------------- */
+
 
 
 

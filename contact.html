@@ -30,6 +30,16 @@
 
 <body>
 
+    <!-- =============================
+        Loader
+        ============================= -->
+    <div class="loader-wrapper">
+        <img src="assets/img/logo.png" alt="Loader" class="loader-img">
+    </div>
+    <!-- =============================
+    Loader
+    ============================= -->
+
     <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -39,7 +49,7 @@
 NAVBAR
 ============================= -->
 
-   <nav class="navbar navbar-expand-lg custom-navbar">
+    <nav class="navbar navbar-expand-lg custom-navbar">
 
         <div class="container">
 
@@ -1267,7 +1277,7 @@ SCRIPTS
         init();
         resetAuto();
     </script>
- <script>
+    <script>
         document.querySelectorAll('.dropdown').forEach(function (dropdown) {
             dropdown.addEventListener('show.bs.dropdown', function () {
                 this.querySelector('.arrow-icon').style.transform = 'rotate(90deg)';
@@ -1277,6 +1287,36 @@ SCRIPTS
                 this.querySelector('.arrow-icon').style.transform = 'rotate(0deg)';
             });
         });
+    </script>
+
+    <script>
+        let pageLoaded = false;
+        let minTimePassed = false;
+
+        const loader = document.querySelector(".loader-wrapper");
+
+        // Page fully loaded
+        window.addEventListener("load", function () {
+            pageLoaded = true;
+            hideLoader();
+        });
+
+        // Minimum 3 seconds
+        setTimeout(function () {
+            minTimePassed = true;
+            hideLoader();
+        }, 3000);
+
+        function hideLoader() {
+            if (pageLoaded && minTimePassed) {
+                loader.classList.add("hide");
+
+                // Remove from DOM after animation
+                setTimeout(() => {
+                    loader.style.display = "none";
+                }, 700);
+            }
+        }
     </script>
 
 
