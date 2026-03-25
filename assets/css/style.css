@@ -781,7 +781,7 @@ WHY CHOOSE
 .service-card h4 {
     font-size: 18px;
     margin: 0;
-    width: 60%;
+    width: 62%;
     margin-top: 10px;
     color: #000;
 }
@@ -1075,6 +1075,7 @@ ADD SECTION
 
 .appointment-content {
     padding-left: 35px;
+    width: 100%;
 }
 
 .appointment-img img {
@@ -1156,7 +1157,7 @@ ADD SECTION
 /* LEFT IMAGE */
 
 .appointment-image img {
-    width: 600px;
+    width: 1000px;
     border-radius: 30px;
     display: block;
 }
