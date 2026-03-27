@@ -83,6 +83,7 @@ body {
     color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-family: "Geist", sans-serif;
 }
 
 /* Gradient border on hover */
@@ -115,6 +116,20 @@ body {
         0 0 rgba(168, 85, 247, 0.3),
         0 0 0 rgba(240, 171, 252, 0.3);
     color: #fff;
+}
+
+.btn-fill-transperent{
+    background:
+        linear-gradient(316deg, #000000ce 0%, #000000ce 44%) padding-box,
+        linear-gradient(90deg, #ffffff9a, #ffffff9a) border-box;
+    color: #ffffff;
+}
+
+.btn-fill-transperent:hover{
+        background:
+        linear-gradient(316deg, #000000ce 0%, #000000ce 44%) padding-box,
+        linear-gradient(90deg, #6a00ff, #ff6ec4) border-box;
+        color: white;
 }
 
 img {
@@ -1928,7 +1943,9 @@ footer {
     margin-bottom: 15px;
     color: #555;
 }
-
+.service-list-points li:last-child{
+    margin: 0;
+}
 
 .service-list-points li::before {
     content: "\f00c";
@@ -1950,6 +1967,10 @@ footer {
 }
 
 @media(max-width: 768px) {
+    .hero-content-service{
+        padding-top: 150px;
+    }
+
     .hero-content-service h3 {
         font-size: 50px;
     }
@@ -2138,6 +2159,7 @@ footer {
     font-size: 25px;
     font-family: 'FONTSPRING DEMO - The Seasons';
     margin-bottom: 15px;
+    text-transform: capitalize;
 }
 
 .card-gray img {
@@ -2240,14 +2262,29 @@ footer {
 
 }
 
-.dentel-offer-gary-box img {
-    margin: 0;
-}
 
 .dentel-offer-gary-box h6 {
     font-size: 18px;
     width: 50%;
 }
+
+.why-choose-img-box{
+    height: 80px;
+    width: 80px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.why-choose-img-box img{
+    width: 80%;
+    object-fit: contain;
+    margin: 0;
+}
+
 
 
 
@@ -2415,4 +2452,127 @@ textarea.form-control {
 
 /* -----------------------------
     Contact
+----------------------------- */
+
+
+/* -----------------------------
+    Doctors
+----------------------------- */
+
+
+.doctor-card {
+    background: #e9e9eb;
+    border-radius: 18px;
+    padding: 28px 28px 30px;
+    height: 100%;
+    min-height: 315px;
+    transition: all 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-4px);
+}
+
+.doctor-thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.doctor-category {
+    font-size: 16px;
+    color: #5e5e5e;
+    font-weight: 400;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+.doctor-title {
+    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-size: 24px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.doctor-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.45;
+    margin-bottom: 26px;
+    max-width: 95%;
+}
+
+.consult-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 228px;
+    height: 38px;
+    padding: 0 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #a97442 0%, #e0ad83 100%);
+    transition: all 0.3s ease;
+}
+
+.consult-btn:hover {
+    color: #fff;
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .doctor-card {
+        min-height: auto;
+    }
+
+    .doctor-title {
+        font-size: 22px;
+    }
+
+    .doctor-desc {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .doctor-card {
+        padding: 22px 20px 24px;
+        border-radius: 16px;
+    }
+
+    .doctor-thumb {
+        width: 62px;
+        height: 62px;
+    }
+
+    .doctor-category {
+        font-size: 15px;
+    }
+
+    .doctor-title {
+        font-size: 21px;
+    }
+
+    .doctor-desc {
+        font-size: 14px;
+    }
+
+    .consult-btn {
+        min-width: 210px;
+        height: 40px;
+        font-size: 13px;
+    }
+}
+
+/* -----------------------------
+    Doctors
 ----------------------------- */
