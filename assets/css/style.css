@@ -1100,7 +1100,7 @@ ADD SECTION
 @media(max-width:991px) {
     .appointment-content {
         /* padding-top: 20px; */
-        padding-left: 0px;
+        padding-left: 15px !important;
     }
 
     .appointment-main-wrapper .consultation-content {
