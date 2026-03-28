@@ -2147,6 +2147,7 @@ footer {
     padding: 20px;
     border-radius: 15px;
     margin-top: 30px;
+    text-align: left;
     transition: .5s;
 }
 
