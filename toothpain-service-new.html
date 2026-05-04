@@ -140,7 +140,7 @@ NAVBAR
             <div class="custom-container">
                 <div class="hero-content-service" data-aos="fade-up">
                     <h3>
-                        Teeth Whitening in <br> Dubai Visibly <br> Brighter in One Visit
+                        Teeth Whitening in-- <br> Dubai Visibly <br> Brighter in One Visit
                     </h3>
                     <p>Jesh and Mikh Dental Clinic <br>
                         Effective Tooth Pain Treatment in Al Karama, Dubai</p>
@@ -368,9 +368,9 @@ NAVBAR
 
                 </div>
             </div>
-            <div class="row g-4">
+            <div class="compare-wrapper-main">
                 <!-- Card 1 -->
-                <div class="col-md-4" data-aos="fade-up">
+                <div class="compare-wrapper-box" data-aos="fade-up">
                     <div class="offer-card">
                         <div>
                             <h3>In-clinic whitening</h3>
@@ -389,7 +389,7 @@ NAVBAR
                 </div>
 
                 <!-- Card 2 -->
-                <div class="col-md-4" data-aos="fade-up">
+                <div class="compare-wrapper-box" data-aos="fade-up">
                     <div class="offer-card">
                         <div>
                             <h3>Zoom whitening</h3>
@@ -409,7 +409,7 @@ NAVBAR
                 </div>
 
                 <!-- Card 3 -->
-                <div class="col-md-4" data-aos="fade-up">
+                <div class="compare-wrapper-box" data-aos="fade-up">
                     <div class="offer-card">
                         <div>
                             <h3>Home kit</h3>
@@ -697,6 +697,9 @@ NAVBAR
                 <div class="plan-card">
 
                     <div class="plan-item">
+                        <p class="offer-text">
+                        Emirates Platinum members receive 40% <br> of all treatments
+                    </p>
                         <div>
                             <h4>In clinic whitening</h4>
                             <span>Starter plan</span>
@@ -726,9 +729,7 @@ NAVBAR
                         <div class="price-text">On Consultation</div>
                     </div>
                     <hr>
-                    <p class="offer-text">
-                        Emirates Platinum members receive 40% <br> of all treatments
-                    </p>
+                    
                     <button class="plan-btn">Choose plan</button>
 
                 </div>
@@ -754,14 +755,14 @@ NAVBAR
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row g-3">
                 <div class="col-lg-4">
                     <div class="card-gray dentel-offer-gary-box">
                         <div class="why-choose-img-box">
                             <img src="assets/img/exp-dentel.png" alt="">
                         </div>
                         <div>
-                            <h6>Emirates Platinum — 40% off all treatments</h6>
+                            <h6>Emirates Platinum — 40% off all treatments </h6>
                         </div>
                     </div>
                 </div>
@@ -2081,6 +2082,24 @@ SCRIPTS
     </script>
     <!-- counter -->
 
+
+    
+<script>
+    document.querySelectorAll('.hero-content h3, .hero-content-service h3').forEach(el => {
+        // Count words
+        let words = el.textContent.trim().split(/\s+/).length;
+
+        if (words > 15) {
+            el.style.fontSize = "28px";
+        } else if (words > 10) {
+            el.style.fontSize = "36px";
+        } else if (words > 6) {
+            el.style.fontSize = "48px";
+        } else {
+            el.style.fontSize = "60px";
+        }
+    });
+</script>
 
 
 </body>

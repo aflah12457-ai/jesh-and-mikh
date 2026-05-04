@@ -160,7 +160,13 @@ NAVBAR
             <div class="custom-container">
                 <div class="hero-content" data-aos="fade-up">
                     <h3>
-                        Professional <br>
+                        Professional 
+                        Dental Care
+                        Professional 
+                        Dental CareProfessional 
+                        Dental Care
+                        Professional 
+                        Dental CareProfessional 
                         Dental Care
                     </h3>
                     <p>Healthy Smile for Everyone</p>
@@ -173,6 +179,9 @@ NAVBAR
         </div>
 
     </div>
+
+
+    
 
 
     <!-- =============================
@@ -1838,6 +1847,24 @@ function hideLoader() {
     }
 }
     </script>
+
+
+<script>
+    document.querySelectorAll('.hero-content h3, .hero-content-service h3').forEach(el => {
+        // Count words
+        let words = el.textContent.trim().split(/\s+/).length;
+
+        if (words > 15) {
+            el.style.fontSize = "28px";
+        } else if (words > 10) {
+            el.style.fontSize = "36px";
+        } else if (words > 6) {
+            el.style.fontSize = "48px";
+        } else {
+            el.style.fontSize = "60px";
+        }
+    });
+</script>
 
 </body>
 

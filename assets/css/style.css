@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .custom-container {
     padding: 0px 60px;
 }
@@ -22,7 +23,7 @@ body {
     font-size: 50px;
     font-weight: 400;
     line-height: 1.3;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
     text-transform: capitalize;
 }
 
@@ -519,14 +520,22 @@ HERO SLIDER
     bottom: 80px;
     left: 80px;
     color: white;
-    max-width: 500px;
+    max-width: 1000px;
     z-index: 2;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 }
 
 .hero-content h3 {
     font-size: 60px;
     font-weight: 400;
+}
+
+.hero-content h3.long-text {
+    font-size: 60px;
+}
+
+.hero-content h3.extra-long-text {
+    font-size: 30px;
 }
 
 .hero-content p {
@@ -735,7 +744,7 @@ WHY CHOOSE
 .feature-box p {
     margin: 0;
     font-size: 20px;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 
 }
 
@@ -927,7 +936,7 @@ WHY CHOOSE
     font-size: 25px;
     margin-bottom: 10px;
     font-weight: 500;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
     margin-top: 20px;
 }
 
@@ -1197,7 +1206,7 @@ ADD SECTION
     margin-bottom: 30px;
     line-height: 1.2;
     color: #1e1e1e;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 }
 
 /* FORM */
@@ -1428,7 +1437,7 @@ ADD SECTION
     font-weight: 500;
     color: #1a2e44;
     margin-bottom: 0.6rem;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 }
 
 /* ── ELEMENT  __quote ── */
@@ -1602,7 +1611,7 @@ ADD SECTION
     font-size: 52px;
     font-weight: 400;
     line-height: 1.1;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 
 }
 
@@ -1629,7 +1638,7 @@ ADD SECTION
     align-items: center;
     cursor: pointer;
     font-size: 25px;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 }
 
 .faq-icon {
@@ -1931,7 +1940,7 @@ footer {
     font-size: 60px;
     line-height: 1.2;
     margin-bottom: 10px;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 }
 
 .hero-content-service p {
@@ -1977,7 +1986,7 @@ footer {
 
 @media(max-width: 768px) {
     .hero-content-service {
-        padding-top: 100px;
+        padding-top: 0px;
     }
 
     .hero-content-service h3 {
@@ -2048,7 +2057,7 @@ footer {
 
 .service-list-contents h4 {
     font-size: 25px;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
     margin-bottom: 10px;
 }
 
@@ -2167,7 +2176,7 @@ footer {
 
 .card-gray h2 {
     font-size: 25px;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
     margin-bottom: 15px;
     text-transform: capitalize;
 }
@@ -2272,13 +2281,14 @@ footer {
     display: flex;
     align-items: center;
     gap: 20px;
+    min-height: 100%;
 
 }
 
 
 .dentel-offer-gary-box h6 {
     font-size: 18px;
-    width: 50%;
+    width: 100%;
 }
 
 .why-choose-img-box {
@@ -2309,6 +2319,10 @@ footer {
     .dentel-offer-gary-box h6{
         width: 100%;
     }
+
+    .offer-card h3 {
+    font-weight: 700;
+}
 }
 
 
@@ -2515,7 +2529,7 @@ textarea.form-control {
 }
 
 .doctor-title {
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
     font-size: 24px;
     font-weight: 500;
     color: #111;
@@ -2714,7 +2728,7 @@ textarea.form-control {
 
 @media(max-width:450px) {
     .counter-wrapper {
-        gap: 0px;
+        gap: 5px;
         flex-wrap: wrap;
     }
     .counter-item{
@@ -2838,7 +2852,7 @@ textarea.form-control {
     margin: 0;
     font-size: 20px;
     font-weight: 500;
-    font-family: 'FONTSPRING DEMO - The Seasons';
+    font-family: 'The Seasons';
 }
 
 .plan-item span {
@@ -3115,3 +3129,46 @@ textarea.form-control {
 /* -----------------------------
     New service page
 ----------------------------- */
+
+
+
+/* -----------------------------
+    COMPARE
+----------------------------- */
+
+
+.compare-wrapper-main{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.compare-wrapper-box .offer-card h3{
+    min-height: 70px;
+}
+
+@media(max-width:992px) {
+
+    .compare-wrapper-main{
+        overflow-x: scroll;
+    }
+    .compare-wrapper-box{
+        width: 100%;
+        min-width: 500px;
+    }
+     .compare-wrapper-box .offer-card{
+        width: 100%;
+     }
+}
+
+@media(max-width:500px) {
+    .compare-wrapper-box{
+            min-width: 400px;
+        }
+}
+
+@media(max-width:400px) {
+    .compare-wrapper-box{
+            min-width: 300px;
+        }
+}
