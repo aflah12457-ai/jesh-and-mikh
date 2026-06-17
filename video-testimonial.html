@@ -148,32 +148,56 @@ NAVBAR
 
     <section class="section-padding">
         <div class="custom-container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Invisalign</h2>
+            </div>
             <div class="owl-carousel beforeAfterCarousel2 gallery-carousel">
                 <div class="item">
-                    <video controls poster="thumb1.jpg">
-                        <source src="video1.mp4" type="video/mp4">
-                    </video>
+                    <div class="custom-video-wrapper">
+                        <video class="custom-video" preload="auto" muted playsinline>
+                            <source src="assets/img/testimonial-video.mp4" type="video/mp4">
+                        </video>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="item">
-                    <video controls poster="thumb2.jpg">
-                        <source src="video2.mp4" type="video/mp4">
-                    </video>
+                    <div class="custom-video-wrapper">
+                        <video class="custom-video" preload="auto" muted playsinline>
+                            <source src="assets/img/testimonial-video.mp4" type="video/mp4">
+                        </video>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="item">
-                    <video controls poster="thumb3.jpg">
-                        <source src="video3.mp4" type="video/mp4">
-                    </video>
+                    <div class="custom-video-wrapper">
+                        <video class="custom-video" preload="auto" muted playsinline>
+                            <source src="assets/img/testimonial-video.mp4" type="video/mp4">
+                        </video>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="item">
-                    <video controls poster="thumb4.jpg">
-                        <source src="video4.mp4" type="video/mp4">
-                    </video>
+                    <div class="custom-video-wrapper">
+                        <video class="custom-video" preload="auto" muted playsinline>
+                            <source src="assets/img/testimonial-video.mp4" type="video/mp4">
+                        </video>
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -287,6 +311,7 @@ SCRIPTS
         });
     </script>
 
+
     <script>
         /* -----------------------------
         NAVBAR SCROLL EFFECT
@@ -305,34 +330,87 @@ SCRIPTS
 
 
     <script>
-        $('.beforeAfterCarousel2').owlCarousel({
-            loop: true,
-            center: true,
-            items: 2,
-            margin: 20,
-            nav: true,
-            dots: true,
-            stagePadding: 120,
+        $(document).ready(function () {
 
-            navText: [
-                '<i class="fas fa-arrow-left"></i>',
-                '<i class="fas fa-arrow-right"></i>'
-            ],
+            // Owl Carousel
+            $('.beforeAfterCarousel2').owlCarousel({
+                loop: true,
+                center: true,
+                items: 1,
+                margin: 20,
+                nav: true,
+                dots: true,
+                stagePadding: 250,
+                navText: [
+                    '<i class="fas fa-arrow-left"></i>',
+                    '<i class="fas fa-arrow-right"></i>'
+                ],
 
-            responsive: {
-                0: {
-                    items: 1,
-                    stagePadding: 30
-                },
-                768: {
-                    items: 1,
-                    stagePadding: 80
-                },
-                1200: {
-                    items: 1,
-                    stagePadding: 180
+                responsive: {
+                    0: {
+                        stagePadding: 30
+                    },
+                    768: {
+                        stagePadding: 100
+                    },
+                    1200: {
+                        stagePadding: 250
+                    }
                 }
-            }
+            });
+
+
+            // Video Controls
+            $('.custom-video-wrapper').each(function () {
+
+                let wrapper = $(this);
+                let video = wrapper.find('.custom-video')[0];
+                let playBtn = wrapper.find('.play-btn');
+
+                // Play Button Click
+                playBtn.on('click', function () {
+
+                    // Pause all videos first
+                    $('.custom-video').each(function () {
+
+                        if (this !== video) {
+                            this.pause();
+
+                            $(this)
+                                .closest('.custom-video-wrapper')
+                                .find('.play-btn')
+                                .show();
+                        }
+                    });
+
+                    video.play();
+                    playBtn.hide();
+                });
+
+                // Show button when paused
+                video.addEventListener('pause', function () {
+                    playBtn.show();
+                });
+
+                // Show button when ended
+                video.addEventListener('ended', function () {
+                    playBtn.show();
+                });
+
+            });
+
+
+            // Pause videos on slide change
+            $('.beforeAfterCarousel2').on('changed.owl.carousel', function () {
+
+                $('.custom-video').each(function () {
+                    this.pause();
+                });
+
+                $('.play-btn').show();
+
+            });
+
         });
     </script>
 
