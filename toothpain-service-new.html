@@ -43,6 +43,9 @@
     <a href="https://wa.me/+971521000425" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <a href="tel:+971521000425" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
 
 
     <!-- =============================
@@ -133,7 +136,7 @@ NAVBAR
 
     <div class=" hero-slider">
 
-        <div class="about-banner" style="background-image:url('assets/img/toothpain-new.png')">
+        <div class="about-banner banner-overlay-65" style="background-image:url('assets/img/toothpain-new.png')">
 
             <div class="overlay"></div>
 
@@ -409,6 +412,25 @@ NAVBAR
                 </div>
 
                 <!-- Card 3 -->
+                <div class="compare-wrapper-box" data-aos="fade-up">
+                    <div class="offer-card">
+                        <div>
+                            <h3>Home kit</h3>
+                            <p>Enhance your smile with high-quality dental veneers designed to improve tooth shape,
+                                color, and appearance. </p>
+
+                            <ul class="offer-list">
+                                <li><i class="fas fa-check"></i> 10–14 days</li>
+                                <li><i class="fas fa-check"></i> 3–5 shades</li>
+                                <li><i class="fas fa-check"></i> On consult</li>
+                            </ul>
+                        </div>
+
+                        <button class="btn feature-btn">Book Consultation</button>
+                    </div>
+                </div>
+
+                 <!-- Card 3 -->
                 <div class="compare-wrapper-box" data-aos="fade-up">
                     <div class="offer-card">
                         <div>
@@ -947,8 +969,8 @@ NAVBAR
                     <div class="doctor-card">
                         <div class="row  align-items-center">
                             <div class="col-lg-5">
-                                <div class="about-layout-image image-shine-effect mb-3 mb-md-0" data-aos="zoom-in">
-                                    <img class="rounded-4" src="assets/img/doctor.png">
+                                <div class="about-layout-image image-shine-effect doctor-img-wrapper mb-3 mb-md-0" data-aos="zoom-in">
+                                    <img class="rounded-4" src="assets/img/service10.png">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -1450,537 +1472,6 @@ SCRIPTS
             });
 
         });
-    </script>
-
-    <script>
-        /* ============================================================
-     DATA
-  ============================================================ */
-        const TESTIMONIALS = [{
-                name: "Armin Agassi",
-                quote: "Dr. Nisha's approach made me feel comfortable and confident throughout the process. Her expertise and dedication are evident, and the results exceeded my expectations. I'm truly satisfied with the service and highly recommend her to anyone looking for top-notch dental care.",
-                thanks: "Thank you, Dr. Nisha, for your excellent work!",
-                img: "assets/img/testimonial-1.png"
-            },
-            {
-                name: "Sarah Mitchell",
-                quote: "I had been nervous about dental visits my whole life, but Dr. Nisha completely changed that for me. The clinic is warm, welcoming, and every procedure was painless. I finally have the smile I always dreamed of!",
-                thanks: "Thank you so much for transforming my smile!",
-                img: "assets/img/testimonial-2.png"
-            },
-            {
-                name: "James Thornton",
-                quote: "Professional, thorough, and genuinely caring. Dr. Nisha took the time to explain every step and made sure I was comfortable. The quality of work is outstanding and I couldn't be happier with my results.",
-                thanks: "Highly recommend to everyone!",
-                img: "assets/img/testimonial-3.png"
-            },
-            {
-                name: "Priya Sharma",
-                quote: "The entire team is wonderful. From the moment you walk in, you feel at ease. Dr. Nisha's skill and attention to detail is unmatched. My teeth have never looked or felt better. A truly exceptional experience.",
-                thanks: "Forever grateful for the beautiful results!",
-                img: "assets/img/testimonial-4.png"
-            },
-            {
-                name: "Lucas Ferreira",
-                quote: "I came in for a routine cleaning and left feeling like a new person. The professionalism and warmth of the staff is remarkable. Dr. Nisha is clearly passionate about her craft and it shows in every visit.",
-                thanks: "Best dental experience I've ever had!",
-                img: "assets/img/testimonial-5.png"
-            }
-        ];
-
-        /* ============================================================
-           CONSTANTS
-        ============================================================ */
-        const DURATION = 0.65;
-        const B = 'testimonial-slider';
-
-        /* ============================================================
-           STATE
-        ============================================================ */
-        let current = 0;
-        let busy = false;
-        const total = TESTIMONIALS.length;
-
-        /* ============================================================
-           DOM REFS
-        ============================================================ */
-        const rootEl = document.getElementById('ts-root');
-        const carouselEl = document.getElementById('ts-carousel');
-        const stageEl = document.getElementById('ts-stage');
-        const dotsEl = document.getElementById('ts-dots');
-        const nameEl = document.getElementById('ts-name');
-        const quoteEl = document.getElementById('ts-quote');
-        const thanksEl = document.getElementById('ts-thanks');
-        const contentEl = document.getElementById('ts-content');
-        const prevBtn = document.getElementById('ts-prev');
-        const nextBtn = document.getElementById('ts-next');
-
-        const slideEls = [];
-        const dotEls = [];
-
-        /* ============================================================
-           RESPONSIVE SLOT CONFIG
-           Recalculates based on actual carousel width.
-           Returns array of 5 slot objects.
-        ============================================================ */
-        function buildSlots(stageW) {
-            const cx = stageW / 2;
-
-            if (stageW <= 380) {
-                // Mobile XS: only 1 visible (center only)
-                return [{
-                        dx: -stageW,
-                        w: stageW * 0.52,
-                        h: 200,
-                        z: 1,
-                        opacity: 0,
-                        blur: 0,
-                        bright: 1
-                    },
-                    {
-                        dx: -stageW * 0.6,
-                        w: stageW * 0.52,
-                        h: 200,
-                        z: 2,
-                        opacity: 0,
-                        blur: 0,
-                        bright: 1
-                    },
-                    {
-                        dx: 0,
-                        w: stageW * 0.60,
-                        h: 220,
-                        z: 4,
-                        opacity: 1,
-                        blur: 0,
-                        bright: 1
-                    },
-                    {
-                        dx: stageW * 0.6,
-                        w: stageW * 0.52,
-                        h: 200,
-                        z: 2,
-                        opacity: 0,
-                        blur: 0,
-                        bright: 1
-                    },
-                    {
-                        dx: stageW,
-                        w: stageW * 0.52,
-                        h: 200,
-                        z: 1,
-                        opacity: 0,
-                        blur: 0,
-                        bright: 1
-                    },
-                ];
-            }
-
-            if (stageW <= 520) {
-                // Mobile: center + two faded sides peeking
-                const cw = stageW * 0.58;
-                const sw = stageW * 0.30;
-                return [{
-                        dx: -(cw * 0.5 + sw * 0.5 + 10) - sw * 0.4,
-                        w: sw * 0.7,
-                        h: 170,
-                        z: 1,
-                        opacity: 0.25,
-                        blur: 3,
-                        bright: 0.75
-                    },
-                    {
-                        dx: -(cw * 0.5 + sw * 0.5 + 8),
-                        w: sw,
-                        h: 195,
-                        z: 2,
-                        opacity: 0.60,
-                        blur: 1,
-                        bright: 0.85
-                    },
-                    {
-                        dx: 0,
-                        w: cw,
-                        h: 230,
-                        z: 4,
-                        opacity: 1,
-                        blur: 0,
-                        bright: 1
-                    },
-                    {
-                        dx: (cw * 0.5 + sw * 0.5 + 8),
-                        w: sw,
-                        h: 195,
-                        z: 2,
-                        opacity: 0.60,
-                        blur: 1,
-                        bright: 0.85
-                    },
-                    {
-                        dx: (cw * 0.5 + sw * 0.5 + 10) + sw * 0.4,
-                        w: sw * 0.7,
-                        h: 170,
-                        z: 1,
-                        opacity: 0.25,
-                        blur: 3,
-                        bright: 0.75
-                    },
-                ];
-            }
-
-            if (stageW <= 768) {
-                // Tablet: 3 prominent cards, far cards barely visible
-                const cw = Math.min(220, stageW * 0.42);
-                const sw = Math.min(165, stageW * 0.30);
-                const fw = Math.min(70, stageW * 0.12);
-                const gap = 14;
-                return [{
-                        dx: -(cw / 2 + sw + fw / 2 + gap * 2),
-                        w: fw,
-                        h: 175,
-                        z: 1,
-                        opacity: 0.30,
-                        blur: 2.5,
-                        bright: 0.78
-                    },
-                    {
-                        dx: -(cw / 2 + sw / 2 + gap),
-                        w: sw,
-                        h: 210,
-                        z: 2,
-                        opacity: 0.68,
-                        blur: 0.8,
-                        bright: 0.88
-                    },
-                    {
-                        dx: 0,
-                        w: cw,
-                        h: 250,
-                        z: 4,
-                        opacity: 1,
-                        blur: 0,
-                        bright: 1
-                    },
-                    {
-                        dx: (cw / 2 + sw / 2 + gap),
-                        w: sw,
-                        h: 210,
-                        z: 2,
-                        opacity: 0.68,
-                        blur: 0.8,
-                        bright: 0.88
-                    },
-                    {
-                        dx: (cw / 2 + sw + fw / 2 + gap * 2),
-                        w: fw,
-                        h: 175,
-                        z: 1,
-                        opacity: 0.30,
-                        blur: 2.5,
-                        bright: 0.78
-                    },
-                ];
-            }
-
-            // Desktop: full 5-card layout
-            const cw = Math.min(248, stageW * 0.26);
-            const sw = Math.min(202, stageW * 0.21);
-            const fw = Math.min(82, stageW * 0.085);
-            const gap = 18;
-            return [{
-                    dx: -(cw / 2 + sw + fw / 2 + gap * 2),
-                    w: fw,
-                    h: 195,
-                    z: 1,
-                    opacity: 0.38,
-                    blur: 2.5,
-                    bright: 0.78
-                },
-                {
-                    dx: -(cw / 2 + sw / 2 + gap),
-                    w: sw,
-                    h: 235,
-                    z: 2,
-                    opacity: 0.70,
-                    blur: 0.8,
-                    bright: 0.88
-                },
-                {
-                    dx: 0,
-                    w: cw,
-                    h: 275,
-                    z: 4,
-                    opacity: 1,
-                    blur: 0,
-                    bright: 1
-                },
-                {
-                    dx: (cw / 2 + sw / 2 + gap),
-                    w: sw,
-                    h: 235,
-                    z: 2,
-                    opacity: 0.70,
-                    blur: 0.8,
-                    bright: 0.88
-                },
-                {
-                    dx: (cw / 2 + sw + fw / 2 + gap * 2),
-                    w: fw,
-                    h: 195,
-                    z: 1,
-                    opacity: 0.38,
-                    blur: 2.5,
-                    bright: 0.78
-                },
-            ];
-        }
-
-        /* ============================================================
-           CAROUSEL HEIGHT  (based on center slot height + padding)
-        ============================================================ */
-        function carouselHeight(slots) {
-            return slots[2].h + 30; // center card + vertical breathing room
-        }
-
-        /* ============================================================
-           SLOT INDEX  for slide i
-        ============================================================ */
-        function slotOf(i) {
-            const diff = (i - current + total) % total;
-            if (diff === 0) return 2;
-            if (diff === 1) return 3;
-            if (diff === 2) return 4;
-            if (diff === total - 1) return 1;
-            if (diff === total - 2) return 0;
-            return null;
-        }
-
-        /* ============================================================
-           APPLY SLOT  (GSAP set or to)
-        ============================================================ */
-        function applySlot(el, slotIdx, instant, slots) {
-            const stageW = stageEl.offsetWidth;
-            const centerX = stageW / 2;
-
-            if (slotIdx === null) {
-                gsap.to(el, {
-                    opacity: 0,
-                    duration: 0.25,
-                    ease: 'power2.out'
-                });
-                return;
-            }
-
-            const s = slots[slotIdx];
-            const x = centerX + s.dx - s.w / 2;
-            const props = {
-                left: x,
-                top: '50%',
-                yPercent: -50,
-                width: s.w,
-                height: s.h,
-                opacity: s.opacity,
-                zIndex: s.z,
-                filter: `blur(${s.blur}px) brightness(${s.bright})`,
-                boxShadow: slotIdx === 2 ?
-                    '0 10px 40px rgba(0,0,0,0.16)' : '0 2px 8px rgba(0,0,0,0.06)'
-            };
-
-            instant
-                ?
-                gsap.set(el, props) :
-                gsap.to(el, {
-                    ...props,
-                    duration: DURATION,
-                    ease: 'power3.inOut'
-                });
-        }
-
-        /* ============================================================
-           UPDATE DOTS
-        ============================================================ */
-        function updateDots() {
-            dotEls.forEach((d, i) =>
-                d.classList.toggle(`${B}__dot--active`, i === current));
-        }
-
-        /* ============================================================
-           UPDATE TEXT  (crossfade)
-        ============================================================ */
-        function updateText(animate) {
-            const t = TESTIMONIALS[current];
-            if (!animate) {
-                nameEl.textContent = t.name;
-                quoteEl.textContent = t.quote;
-                thanksEl.textContent = t.thanks;
-                return;
-            }
-            gsap.to(contentEl, {
-                opacity: 0,
-                y: -8,
-                duration: 0.2,
-                ease: 'power2.in',
-                onComplete() {
-                    nameEl.textContent = t.name;
-                    quoteEl.textContent = t.quote;
-                    thanksEl.textContent = t.thanks;
-                    gsap.fromTo(contentEl, {
-                        opacity: 0,
-                        y: 10
-                    }, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.4,
-                        ease: 'power2.out'
-                    });
-                }
-            });
-        }
-
-        /* ============================================================
-           RENDER  (place all slides for current state)
-        ============================================================ */
-        function render(instant) {
-            const slots = buildSlots(stageEl.offsetWidth);
-            // Update carousel height
-            carouselEl.style.setProperty('--carousel-h', carouselHeight(slots) + 'px');
-            carouselEl.style.height = carouselHeight(slots) + 'px';
-
-            slideEls.forEach((el, i) => applySlot(el, slotOf(i), instant, slots));
-            updateDots();
-        }
-
-        /* ============================================================
-           INIT  (no animation)
-        ============================================================ */
-        function init() {
-            render(true);
-            updateText(false);
-        }
-
-        /* ============================================================
-           GO TO SLIDE
-        ============================================================ */
-        function goTo(idx) {
-            if (busy) return;
-            const next = ((idx % total) + total) % total;
-            if (next === current) return;
-
-            busy = true;
-            current = next;
-
-            render(false);
-            updateText(true);
-
-            setTimeout(() => {
-                busy = false;
-            }, DURATION * 1000 + 60);
-        }
-
-        /* ============================================================
-           BUILD SLIDES & DOTS
-        ============================================================ */
-        TESTIMONIALS.forEach((t, i) => {
-            const slide = document.createElement('div');
-            slide.className = `${B}__slide`;
-            const img = document.createElement('img');
-            img.className = `${B}__slide-img`;
-            img.src = t.img;
-            img.alt = t.name;
-            slide.appendChild(img);
-            slide.addEventListener('click', () => {
-                if (!busy) goTo(i);
-            });
-            stageEl.appendChild(slide);
-            slideEls.push(slide);
-
-            const dot = document.createElement('div');
-            dot.className = `${B}__dot`;
-            dot.setAttribute('role', 'button');
-            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-            dot.addEventListener('click', () => {
-                if (!busy) goTo(i);
-            });
-            dotsEl.appendChild(dot);
-            dotEls.push(dot);
-        });
-
-        /* ============================================================
-           TOUCH / SWIPE  SUPPORT
-        ============================================================ */
-        let touchStartX = 0;
-        let touchStartY = 0;
-
-        carouselEl.addEventListener('touchstart', e => {
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-        }, {
-            passive: true
-        });
-
-        carouselEl.addEventListener('touchend', e => {
-            const dx = e.changedTouches[0].clientX - touchStartX;
-            const dy = e.changedTouches[0].clientY - touchStartY;
-            // Only trigger if horizontal swipe dominates
-            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-                if (dx < 0) {
-                    goTo(current + 1);
-                    resetAuto();
-                } else {
-                    goTo(current - 1);
-                    resetAuto();
-                }
-            }
-        }, {
-            passive: true
-        });
-
-        /* ============================================================
-           RESIZE  HANDLER  (debounced)
-        ============================================================ */
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                render(true); // instant re-place on resize
-            }, 120);
-        });
-
-        /* ============================================================
-           ARROW & KEYBOARD CONTROLS
-        ============================================================ */
-        let autoTimer;
-
-        function resetAuto() {
-            clearInterval(autoTimer);
-            autoTimer = setInterval(() => goTo(current + 1), 5000);
-        }
-
-        prevBtn.addEventListener('click', () => {
-            goTo(current - 1);
-            resetAuto();
-        });
-        nextBtn.addEventListener('click', () => {
-            goTo(current + 1);
-            resetAuto();
-        });
-
-        document.addEventListener('keydown', e => {
-            if (e.key === 'ArrowLeft') {
-                goTo(current - 1);
-                resetAuto();
-            }
-            if (e.key === 'ArrowRight') {
-                goTo(current + 1);
-                resetAuto();
-            }
-        });
-
-        /* ============================================================
-           KICK OFF
-        ============================================================ */
-        init();
-        resetAuto();
     </script>
 
     <script>
